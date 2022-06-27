@@ -1,0 +1,11 @@
+:host {
+  display: flex;
+  width: 100%;
+  gap: 5rem;
+  flex: 1;
+}
+
+div {
+  background-color: yellow;
+  flex: 1;
+}

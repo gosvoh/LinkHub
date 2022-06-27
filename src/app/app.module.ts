@@ -15,6 +15,8 @@ import { CompanyComponent } from './layout/persona/company/company.component';
 import { CodeComponent } from './layout/persona/code/code.component';
 import { StatsComponent } from './layout/persona/stats/stats.component';
 import { SettingsComponent } from './layout/persona/settings/settings.component';
+import { VacancyCardComponent } from './components/vacancy-card/vacancy-card.component';
+import { ResumeCardComponent } from './components/resume-card/resume-card.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { SettingsComponent } from './layout/persona/settings/settings.component'
     CompanyComponent,
     CodeComponent,
     StatsComponent,
-    SettingsComponent
+    SettingsComponent,
+    VacancyCardComponent,
+    ResumeCardComponent
   ],
   imports: [
     BrowserModule,

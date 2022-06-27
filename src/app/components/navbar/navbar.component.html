@@ -1,1 +1,18 @@
-<p>navbar works!</p>
+<a href="/" routerLink="/" class="logo"><h1>LinkHub</h1></a>
+
+<ul>
+    <li><a href="/" routerLink="/">Главная</a></li>
+    <li><a href="/vacancies" routerLink="/vacancies">Вакансии</a></li>
+    <li><a href="/resume" routerLink="/resumes">Резюме</a></li>
+    <li><a href="/about" routerLink="about">О нас</a></li>
+</ul>
+
+<div class="other" *ngIf="!auth.isLoggedIn">
+    <a href="/register" routerLink="/register" class="register" (click)="login()">Регистрация</a>
+    <a href="/login" routerLink="/login" class="login" (click)="login()">Вход</a>
+</div>
+
+<div class="other" *ngIf="auth.isLoggedIn">
+    <a href="/my-resume" routerLink="/my-resume" class="my-page">gosvoh</a>
+    <a href="/" routerLink="/" class="logout" (click)="logout()">Выход</a>
+</div>
