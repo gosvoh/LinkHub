@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { AuthService } from 'src/app/auth.service';
 
 @Component({
@@ -8,14 +9,25 @@ import { AuthService } from 'src/app/auth.service';
 })
 export class NavbarComponent implements OnInit {
   auth: AuthService;
+  currentUrl = '';
 
-  constructor(authService: AuthService) {
+  constructor(authService: AuthService, private router: Router) {
     this.auth = authService;
+    router.events.subscribe((url) => {
+      if (url instanceof NavigationEnd) {
+        this.currentUrl = url.urlAfterRedirects;        
+      }
+    });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
-  logout() { this.auth.isLoggedIn = false; }
+  logout() {
+    this.auth.isLoggedIn = false;
+  }
 
-  login() { this.auth.isLoggedIn = true; }
+  login() {
+    this.auth.isLoggedIn = true;
+  }
 }

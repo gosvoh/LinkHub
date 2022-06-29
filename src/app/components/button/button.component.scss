@@ -1,0 +1,36 @@
+@import "src/scss/colors";
+
+:host {
+  padding: 0.75em;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  &.disabled {
+    opacity: 50%;
+    pointer-events: none;
+  }
+
+  &[type="accent"] {
+    color: white;
+    background-color: $clr-accent;
+
+    &:hover {
+      background-color: $clr-accent-lighter;
+    }
+  }
+
+  &[type="secondary"] {
+    color: white;
+    outline: 1px solid white;
+    outline-offset: -1px;
+
+    &:hover {
+      color: black;
+      background-color: white;
+    }
+  }
+}

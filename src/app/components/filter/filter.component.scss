@@ -1,0 +1,13 @@
+@import "src/scss/colors";
+
+:host {
+    input {
+        background-color: $clr-fill;
+        border: none;
+        outline: 1px solid $clr-grey;
+
+        &:focus {
+            outline: 1px solid $clr-accent;
+        }
+    }
+}

@@ -1,9 +1,12 @@
+@import "src/scss/colors";
+
 :root {
   font-family: Arial, Helvetica, sans-serif;
 }
 
 * {
   box-sizing: border-box;
+  color: white;
 }
 
 html,
@@ -22,14 +25,8 @@ app-root {
 }
 
 body {
-  background-color: #04001a;
-  background: linear-gradient(
-    135deg,
-    rgb(28, 0, 184) -10%,
-    rgb(4, 0, 26) 15%,
-    rgb(4, 0, 26) 85%,
-    rgb(255, 0, 0) 110%
-  );
+  background-color: $clr-main-dark;
+  background: $clr-body-gradient;
 }
 
 app-root {

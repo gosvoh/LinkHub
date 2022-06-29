@@ -1,0 +1,18 @@
+:host {
+    flex: 1;
+    color: white;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.container {
+    padding: 2.5rem;
+
+    p {
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+}

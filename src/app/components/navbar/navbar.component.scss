@@ -31,24 +31,15 @@ ul {
       text-decoration: underline;
       // TODO underline animation
     }
+
+    &.active {
+      text-decoration: underline;
+    }
   }
 
 }
 
 .other {
-  .register {
-    padding: 1rem;
-    border: 0.1rem solid white;
-    border-radius: 1rem;
-    transition: 0.25s ease;
-
-    &:hover {
-      background-color: white;
-      color: black;
-      transition: 0.25s ease;
-    }
-  }
-
   > *:not(:last-child) {
     margin-right: 2rem;
   }

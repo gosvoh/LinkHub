@@ -17,6 +17,11 @@ import { StatsComponent } from './layout/persona/stats/stats.component';
 import { SettingsComponent } from './layout/persona/settings/settings.component';
 import { VacancyCardComponent } from './components/vacancy-card/vacancy-card.component';
 import { ResumeCardComponent } from './components/resume-card/resume-card.component';
+import { ButtonComponent } from './components/button/button.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { InfiniteScrollComponent } from './components/infinite-scroll/infinite-scroll.component';
+import { AboutComponent } from './layout/about/about.component';
+import { FilterComponent } from './components/filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -34,11 +39,16 @@ import { ResumeCardComponent } from './components/resume-card/resume-card.compon
     StatsComponent,
     SettingsComponent,
     VacancyCardComponent,
-    ResumeCardComponent
+    ResumeCardComponent,
+    ButtonComponent,
+    InfiniteScrollComponent,
+    AboutComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    InfiniteScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]

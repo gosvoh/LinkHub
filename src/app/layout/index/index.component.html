@@ -1,2 +1,12 @@
-<div class="vacancies">vacancies</div>
-<div class="resumes"><app-resume-card></app-resume-card></div>
+<div class="vacancies">
+  <h2>Вакансии</h2>
+  <div class="cards">
+    <app-vacancy-card *ngFor="let _ of [].constructor(20)"></app-vacancy-card>
+  </div>
+</div>
+<div class="resumes">
+  <h2>Резюме</h2>
+  <div class="cards">
+    <app-resume-card *ngFor="let _ of [].constructor(20)"></app-resume-card>
+  </div>
+</div>
