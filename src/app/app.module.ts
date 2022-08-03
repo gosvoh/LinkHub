@@ -22,6 +22,11 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { InfiniteScrollComponent } from './components/infinite-scroll/infinite-scroll.component';
 import { AboutComponent } from './layout/about/about.component';
 import { FilterComponent } from './components/filter/filter.component';
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {TabsComponent} from "./components/tabs/tabs.component";
+import {TabComponent} from "./components/tabs/tab.component";
+import { PersonalPageComponent } from './layout/personal-page/personal-page.component';
 
 @NgModule({
   declarations: [
@@ -43,12 +48,18 @@ import { FilterComponent } from './components/filter/filter.component';
     ButtonComponent,
     InfiniteScrollComponent,
     AboutComponent,
-    FilterComponent
+    FilterComponent,
+    TabsComponent,
+    TabComponent,
+    PersonalPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

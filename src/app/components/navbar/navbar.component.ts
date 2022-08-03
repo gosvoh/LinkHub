@@ -8,14 +8,12 @@ import { AuthService } from 'src/app/auth.service';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  auth: AuthService;
   currentUrl = '';
 
-  constructor(authService: AuthService, private router: Router) {
-    this.auth = authService;
+  constructor(public auth: AuthService, private router: Router) {
     router.events.subscribe((url) => {
       if (url instanceof NavigationEnd) {
-        this.currentUrl = url.urlAfterRedirects;        
+        this.currentUrl = url.urlAfterRedirects;
       }
     });
   }
@@ -24,10 +22,10 @@ export class NavbarComponent implements OnInit {
   }
 
   logout() {
-    this.auth.isLoggedIn = false;
-  }
-
-  login() {
-    this.auth.isLoggedIn = true;
+    localStorage.removeItem('user');
+    this.auth.logged = false;
+    this.auth.user.login = '';
+    this.auth.user.email = '';
+    this.auth.user.password = '';
   }
 }

@@ -1,0 +1,12 @@
+@import "src/scss/colors";
+
+:host {
+  width: 100%;
+  flex: 1;
+  color: white;
+}
+
+.active {
+  flex: 1;
+}
+

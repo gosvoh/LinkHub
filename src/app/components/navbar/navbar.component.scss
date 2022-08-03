@@ -1,9 +1,17 @@
+* {
+  font-weight: bold;
+}
+
 :host {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   margin-bottom: 3rem;
+}
+
+.logo {
+  text-decoration: none;
 }
 
 ul {
@@ -42,5 +50,15 @@ ul {
 .other {
   > *:not(:last-child) {
     margin-right: 2rem;
+  }
+
+  img {
+    height: 2rem;
+    width: 2rem;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    margin-right: 0.5rem !important;
+    transform: translateY(25%);
   }
 }

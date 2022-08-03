@@ -1,0 +1,10 @@
+@import "src/scss/colors";
+
+.pane {
+  padding: 1em;
+  width: 100%;
+  height: 100%;
+  background-color: $clr-fill;
+  outline: 1px solid $clr-grey;
+  outline-offset: -1px;
+}

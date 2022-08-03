@@ -32,19 +32,18 @@
   </li>
 </ul>
 
-<div class="other" *ngIf="!auth.isLoggedIn">
+<div class="other" *ngIf="!auth.logged">
   <app-button
     type="secondary"
-    href="/register"
     routerLink="/register"
     class="register"
-    (click)="login()"
     >Регистрация</app-button
   >
-  <a href="/login" routerLink="/login" class="login" (click)="login()">Вход</a>
+  <a href="/login" routerLink="/login" class="login">Вход</a>
 </div>
 
-<div class="other" *ngIf="auth.isLoggedIn">
-  <a href="/my-resume" routerLink="/my-resume" class="my-page">gosvoh</a>
+<div class="other" *ngIf="auth.logged">
+  <img src="assets/img/user-placeholder.webp" alt="{{auth.user.login}}">
+  <a href="/personal-page" routerLink="/personal-page" class="personal-page">{{auth.user.login}}</a>
   <a href="/" routerLink="/" class="logout" (click)="logout()">Выход</a>
 </div>

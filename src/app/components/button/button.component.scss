@@ -8,6 +8,7 @@
   display: inline-block;
   cursor: pointer;
   transition: all 0.25s ease;
+  text-align: center;
 
   &.disabled {
     opacity: 50%;
@@ -31,6 +32,18 @@
     &:hover {
       color: black;
       background-color: white;
+    }
+  }
+
+  &[type="other"] {
+    color: black;
+    background-color: white;
+    outline: 1px solid white;
+    outline-offset: -1px;
+
+    &:hover {
+      color: white;
+      background-color: $clr-main-dark;
     }
   }
 }

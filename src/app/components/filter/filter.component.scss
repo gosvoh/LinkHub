@@ -1,13 +1,49 @@
 @import "src/scss/colors";
 
 :host {
-    input {
-        background-color: $clr-fill;
-        border: none;
-        outline: 1px solid $clr-grey;
+  position: relative;
+  margin: 0.25em 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5em;
 
-        &:focus {
-            outline: 1px solid $clr-accent;
-        }
+  input {
+    background-color: $clr-main-dark;
+    border: none;
+    border-radius: 0.25em;
+    outline: 1px solid $clr-grey;
+    padding: 0.5em 0.5em 0.5em 2em;
+    color: $clr-grey;
+    font-weight: bold;
+    width: 100%;
+
+    &:not(:placeholder-shown) {
+      color: white;
     }
+
+    &:focus,
+    &:not(:placeholder-shown) {
+      outline: 1px solid $clr-accent-lighter;
+    }
+  }
+}
+
+fa-icon {
+  font-size: 0.75em;
+  color: $clr-grey;
+}
+
+.faMagnifyingGlass {
+  position: absolute;
+  left: 0.25em;
+}
+
+.focused {
+  color: white;
+}
+
+.faFilter:hover {
+  color: $clr-accent-lighter;
+  cursor: pointer;
 }
