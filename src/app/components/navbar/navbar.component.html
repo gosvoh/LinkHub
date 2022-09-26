@@ -1,4 +1,4 @@
-<a href="/" routerLink="/" class="logo"><h1>LinkHub</h1></a>
+<a href="/" routerLink="/" class="logo">LinkHub</a>
 
 <ul>
   <li>
@@ -33,17 +33,17 @@
 </ul>
 
 <div class="other" *ngIf="!auth.logged">
-  <app-button
-    type="secondary"
-    routerLink="/register"
-    class="register"
+  <app-button type="secondary" routerLink="/register" class="register"
     >Регистрация</app-button
   >
   <a href="/login" routerLink="/login" class="login">Вход</a>
 </div>
 
 <div class="other" *ngIf="auth.logged">
-  <img src="assets/img/user-placeholder.webp" alt="{{auth.user.login}}">
-  <a href="/personal-page" routerLink="/personal-page" class="personal-page">{{auth.user.login}}</a>
+  <a href="/personal-page" routerLink="/personal-page" class="personal-page">
+    <img src="assets/img/user-placeholder.webp" alt="{{ auth.user.login }}" />{{
+      auth.user.login
+    }}</a
+  >
   <a href="/" routerLink="/" class="logout" (click)="logout()">Выход</a>
 </div>

@@ -1,1 +1,12 @@
-<p>toggle works!</p>
+<label class="toggle">
+  <input
+    class="toggle-checkbox"
+    type="checkbox"
+    [name]="name"
+    [id]="id"
+    [checked]="enabled"
+    [disabled]="!interectable"
+  />
+  <div class="toggle-switch"></div>
+  <span class="toggle-label"><ng-content></ng-content></span>
+</label>

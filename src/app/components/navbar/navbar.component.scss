@@ -7,11 +7,12 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-bottom: 3rem;
+  margin-block: 2rem;
 }
 
 .logo {
   text-decoration: none;
+  font-size: 1.5rem;
 }
 
 ul {
@@ -30,7 +31,7 @@ ul {
     position: relative;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       // TODO underline
     }
@@ -44,21 +45,27 @@ ul {
       text-decoration: underline;
     }
   }
-
 }
 
 .other {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+
   > *:not(:last-child) {
     margin-right: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
 
   img {
-    height: 2rem;
-    width: 2rem;
+    height: 2.5rem;
+    width: 2.5rem;
     object-fit: cover;
     object-position: center;
     border-radius: 50%;
     margin-right: 0.5rem !important;
-    transform: translateY(25%);
   }
 }

@@ -1,32 +1,49 @@
 @import "src/scss/colors";
 
 :host {
-  display: flex;
-  width: 100%;
-  gap: 5rem;
   flex: 1;
-  height: 0;
+  color: white;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
 
-  .cards {
-    border: 1px solid $clr-grey;
-    flex: 1;
-    overflow-y: auto;
-    scrollbar-color: $clr-grey $clr-fill;
-    scrollbar-width: thin;
-    display: flex;
-    flex-direction: column;
+a {
+  transform: translateY(-50%);
+  position: relative;
+  border-radius: 4px;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  &::after {
+    border-top: 1.5rem solid;
+    bottom: -1.5rem;
+    content: "";
+    position: absolute;
   }
 }
 
-.vacancies,
-.resumes {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  align-items: center;
+.vacancies {
+  $clr: #452442;
+  background-color: $clr;
+
+  &::after {
+    border-color: $clr;
+    border-left: 1.5rem solid transparent;
+    right: 1rem;
+  }
 }
 
-h2 {
-  margin: 0.25em 0;
-  color: white;
+.resumes {
+  $clr: #162b41;
+  background-color: $clr;
+
+  &::after {
+    border-color: $clr;
+    border-right: 1.5rem solid transparent;
+    left: 1rem;
+  }
 }

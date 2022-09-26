@@ -8,3 +8,13 @@
   outline: 1px solid $clr-grey;
   outline-offset: -1px;
 }
+
+:host.active {
+  flex: 1;
+  display: flex;
+
+  .pane {
+    flex: 1;
+    display: flex;
+  }
+}

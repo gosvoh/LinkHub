@@ -1,0 +1,53 @@
+@import "src/scss/colors";
+
+:host {
+  height: 100%;
+  display: block;
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem 2rem;
+  align-items: center;
+  padding: 1rem;
+  height: 100%;
+  align-content: start;
+  position: relative;
+}
+
+.input {
+  input {
+    background-color: $clr-main-dark;
+    border: none;
+    border-radius: 0.25em;
+    outline: 1px solid $clr-grey;
+    padding: 0.5em;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 0.5em;
+    color: white;
+
+    &:focus {
+      outline: 1px solid $clr-accent-lighter;
+    }
+  }
+}
+
+.pass > *:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.buttons {
+  position: absolute;
+  bottom: 0;
+  padding: inherit;
+
+  > *:not(:last-child) {
+    margin-right: 1rem;
+  }
+}
+
+app-button + label {
+  margin-left: 1rem;
+}

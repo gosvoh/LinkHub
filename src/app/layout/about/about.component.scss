@@ -1,18 +1,13 @@
 :host {
-    flex: 1;
-    color: white;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    text-align: center;
-    vertical-align: middle;
+  flex: 1;
+  color: white;
+  display: flex;
+  align-items: center;
 }
 
-.container {
-    padding: 2.5rem;
-
-    p {
-        font-weight: bold;
-        font-size: 1.5rem;
-    }
+p {
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+  padding-inline: 2.5rem;
 }

@@ -1,12 +1,16 @@
-import {Component, OnInit} from '@angular/core';
-import {faGoogle, faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
-import {AuthService} from "../../auth.service";
-import {Router} from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import {
+  faGoogle,
+  faGithub,
+  faLinkedin,
+} from '@fortawesome/free-brands-svg-icons';
+import { AuthService } from '../../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
   faGoogle = faGoogle;
@@ -17,14 +21,14 @@ export class LoginComponent implements OnInit {
     this.auth = auth;
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   submit() {
-    if (!this.auth.user.login) this.auth.user.login = 'Unknown';
+    if (!this.auth.user.login) this.auth.user.login = 'undefined';
+    if (!this.auth.user.password) this.auth.user.password = 'undefined';
+    if (!this.auth.user.email) this.auth.user.email = 'undefined';
     this.auth.logged = true;
     localStorage.setItem('user', JSON.stringify(this.auth.user));
     this.router.navigate(['/']);
   }
-
 }

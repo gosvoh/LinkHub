@@ -1,0 +1,29 @@
+:host {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-auto-rows: min-content;
+  grid-template-areas:
+    "lang stat"
+    "chart chart";
+
+  > * {
+    // object-fit: scale-down;
+  }
+}
+
+.langs {
+  grid-area: lang;
+  height: 100%;
+  width: 100%;
+}
+
+.stats {
+  grid-area: stat;
+  width: 100%;
+}
+
+.chart {
+  grid-area: chart;
+  width: 100%;
+}

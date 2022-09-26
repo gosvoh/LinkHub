@@ -1,17 +1,19 @@
-<app-tabs>
-  <app-tab tabTitle="Мое резюме">
-    Мое резюме content
-  </app-tab>
-  <app-tab tabTitle="Моя компания">
-    Моя компания content
-  </app-tab>
-  <app-tab tabTitle="Мой код">
-    <script src="https://gist.github.com/R3tr0BoiDX/74466aca70d5dc9d15b9f8a310160019.js"></script>
-  </app-tab>
-  <app-tab tabTitle="Моя статистика">
-    Моя статистика content
-  </app-tab>
-  <app-tab tabTitle="Настройки">
-    Настройки content
-  </app-tab>
-</app-tabs>
+<ul>
+  <li>
+    <a routerLink="resume">Мое резюме</a>
+  </li>
+  <li>
+    <a routerLink="company">Моя компания</a>
+  </li>
+  <li>
+    <a routerLink="code">Мой код</a>
+  </li>
+  <li>
+    <a routerLink="stats">Моя статистика</a>
+  </li>
+  <li>
+    <a routerLink="settings">Настройик</a>
+  </li>
+</ul>
+
+<router-outlet></router-outlet>

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,15 +20,15 @@ import { SettingsComponent } from './layout/persona/settings/settings.component'
 import { VacancyCardComponent } from './components/vacancy-card/vacancy-card.component';
 import { ResumeCardComponent } from './components/resume-card/resume-card.component';
 import { ButtonComponent } from './components/button/button.component';
-import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { InfiniteScrollComponent } from './components/infinite-scroll/infinite-scroll.component';
 import { AboutComponent } from './layout/about/about.component';
 import { FilterComponent } from './components/filter/filter.component';
-import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {TabsComponent} from "./components/tabs/tabs.component";
-import {TabComponent} from "./components/tabs/tab.component";
+import { TabsComponent } from './components/tabs/tabs.component';
+import { TabComponent } from './components/tabs/tab.component';
 import { PersonalPageComponent } from './layout/personal-page/personal-page.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { NgxGistModule } from '@proangular/ngx-gist';
+import { NgxGgistComponent } from './components/ngx-gist/ngx-gist.component';
 
 @NgModule({
   declarations: [
@@ -51,17 +53,19 @@ import { PersonalPageComponent } from './layout/personal-page/personal-page.comp
     FilterComponent,
     TabsComponent,
     TabComponent,
-    PersonalPageComponent
+    PersonalPageComponent,
+    FooterComponent,
+    NgxGgistComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    InfiniteScrollModule,
     FontAwesomeModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxGistModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
