@@ -27,8 +27,8 @@ import { TabsComponent } from './components/tabs/tabs.component';
 import { TabComponent } from './components/tabs/tab.component';
 import { PersonalPageComponent } from './layout/personal-page/personal-page.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { NgxGistModule } from '@proangular/ngx-gist';
 import { NgxGgistComponent } from './components/ngx-gist/ngx-gist.component';
+import { SkillTagComponent } from './components/skill-tag/skill-tag.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +56,7 @@ import { NgxGgistComponent } from './components/ngx-gist/ngx-gist.component';
     PersonalPageComponent,
     FooterComponent,
     NgxGgistComponent,
+    SkillTagComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +64,6 @@ import { NgxGgistComponent } from './components/ngx-gist/ngx-gist.component';
     FontAwesomeModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxGistModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

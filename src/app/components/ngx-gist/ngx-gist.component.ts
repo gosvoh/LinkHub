@@ -2,69 +2,45 @@ import {
   Component,
   OnInit,
   AfterViewInit,
-  OnChanges,
   Input,
   ElementRef,
   ViewChild,
-  SimpleChanges,
 } from '@angular/core';
 
 @Component({
   selector: 'ngx-ggist',
   templateUrl: './ngx-gist.component.html',
-  styles: [],
+  styleUrls: ['./ngx-gist.component.scss'],
 })
-export class NgxGgistComponent implements OnInit, OnChanges, AfterViewInit {
+export class NgxGgistComponent implements OnInit, AfterViewInit {
   @ViewChild('iframe') iframe: ElementRef | undefined;
   @Input() user: string = '';
   @Input() scriptId: string = 'dab6058aab6491b1da49336887d9d935';
   @Input() lines: number[] = [];
   @Input() width: string = '100%';
-  @Input() height: string = 'inherit';
+  @Input() height: string = '100%';
 
   public scriptSrc: string = '';
-  public theStyle: string = '';
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit(): void {
     this.scriptSrc = `https://gist.github.com/${this.user}/${this.scriptId}.js`;
-    this.theStyle = '';
-    for (let line of this.lines) {
-      this.theStyle += `.highlight tr:nth-of-type(${line}) td { background: yellow; }`;
-    }
   }
 
   ngAfterViewInit() {
-    this.reloadIframe();
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes['lines']) {
-      this.updateLines(changes['lines'].currentValue);
-    }
-  }
-
-  public updateLines(newLines: number[] = []) {
-    this.theStyle = '';
-    for (let line of this.lines) {
-      this.theStyle += `.highlight tr:nth-of-type(${line}) td { background: yellow; }`;
-    }
-    this.reloadIframe();
-  }
-
-  private reloadIframe() {
-    const document = this.iframe?.nativeElement.contentDocument;
+    const doc = this.iframe?.nativeElement.contentDocument || this.iframe?.nativeElement.contentElement.contentWindow;
     const content = `
       <html>
         <head>
           <base target="_parent">
-          <style>${this.theStyle}</style>
         </head>
         <body><script type="text/javascript" src="${this.scriptSrc}"></script></body>
       </html>`;
-    document?.open();
-    document?.write(content);
-    document?.close();
+    doc?.open();
+    doc?.write(content);
+    doc?.close();
+
   }
 }

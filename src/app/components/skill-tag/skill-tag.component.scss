@@ -1,0 +1,14 @@
+@import "src/scss/colors";
+
+:host {
+  border-radius: 0.25rem;
+  background-color: $clr-grey;
+  padding: 0.25rem;
+  display: inline-block;
+  cursor: default;
+}
+
+fa-icon {
+  margin-left: 0.25rem;
+  cursor: pointer;
+}

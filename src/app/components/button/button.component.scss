@@ -10,6 +10,10 @@
   transition: all 0.25s ease;
   text-align: center;
 
+  &:hover {
+    text-decoration: underline;
+  }
+
   &.disabled {
     opacity: 50%;
     pointer-events: none;

@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-button',
-  templateUrl: './button.component.html',
+  template: `<ng-content></ng-content>`,
   styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent implements OnInit {

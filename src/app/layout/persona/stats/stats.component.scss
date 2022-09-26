@@ -1,4 +1,10 @@
+@import "src/scss/colors";
+
 :host {
+  border-radius: 0 0.5em 0.5em 0.5em;
+  outline: 1px solid $clr-grey;
+  outline-offset: -1px;
+  background-color: $clr-fill;
   padding: 1rem;
   display: grid;
   gap: 1rem;
