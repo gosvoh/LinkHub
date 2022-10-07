@@ -1,41 +1,37 @@
-<form (ngSubmit)="submit()" #form="ngForm">
-    <div class="input">
-      <label for="name">Отображаемое имя</label>
-      <!--  TODO предзаполненин  -->
-      <input type="text" name="name" id="name" [value]="user.login"/>
-    </div>
-    <div class="input">
-      <label for="password">Новый пароль</label>
-      <input type="password" name="password" id="password"/>
-    </div>
-    <div class="input">
-      <label for="password-repeat">Подтвердите пароль</label>
-      <input type="password" name="password-repeat" id="password-repeat"/>
-    </div>
+<form #form="ngForm">
+  <div class="input">
+    <!--  TODO предзаполнение  -->
+    <label for="name">Отображаемое имя</label>
+    <input type="text" name="name" id="name" [value]="user.login" />
+  </div>
+  <div class="input">
+    <label for="password">Новый пароль</label>
+    <input type="password" name="password" id="password" />
+  </div>
+  <div class="input">
+    <label for="password-repeat">Подтвердите пароль</label>
+    <input type="password" name="password-repeat" id="password-repeat" />
+  </div>
 
-    <app-toggle id="showCode" name="showCode">Показывать мой код</app-toggle>
-    <app-toggle id="showStat" name="showStat"
-    >Показывать мою статистику
-    </app-toggle
-    >
-    <app-toggle id="hideResume" name="hideResume">Скрыть моё резюме</app-toggle>
+  <app-toggle id="showCode" name="showCode">Показывать код</app-toggle>
+  <app-toggle id="showStat" name="showStat">Показывать статистику </app-toggle>
+  <app-toggle id="hideResume" name="hideResume">Скрыть резюме</app-toggle>
 
-      <app-button type="other" id="google">
-        <fa-icon [icon]="faGoogle"></fa-icon>
-        <span>Подключить Google</span>
-      </app-button>
-      <!--  TODO замена текста  -->
-      <app-button type="other" id="linkedin">
-        <fa-icon [icon]="faLinkedin"></fa-icon>
-        <span>Подключить LinkedIn</span>
-      </app-button>
-      <app-button type="other" id="github">
-        <fa-icon [icon]="faGithub"></fa-icon>
-        <span>Подключить GitHub</span>
-      </app-button>
+  <app-button type="other" id="google" (click)="link($event)">
+    <fa-icon [icon]="faGoogle"></fa-icon>
+    <span>Подключить Google</span>
+  </app-button>
+  <app-button type="other" id="linkedin" (click)="link($event)">
+    <fa-icon [icon]="faLinkedin"></fa-icon>
+    <span>Подключить LinkedIn</span>
+  </app-button>
+  <app-button type="other" id="github" (click)="link($event)">
+    <fa-icon [icon]="faGithub"></fa-icon>
+    <span>Подключить GitHub</span>
+  </app-button>
 
   <div class="buttons">
-    <app-button type="accent" (click)="submit()">Сохранить</app-button>
+    <app-button type="accent" (click)="submit($event)">Сохранить</app-button>
     <app-button type="other" (click)="reset()">Отмена</app-button>
   </div>
 </form>

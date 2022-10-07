@@ -6,11 +6,13 @@
   <p>Локация</p>
 
   <div class="buttons">
-    <app-button type="accent">Откликнуться</app-button>
+    <app-button (click)="connect($event)" type="accent"
+      >Откликнуться</app-button
+    >
     <app-button type="secondary">Подробнее</app-button>
   </div>
 </div>
 <div class="user">
-  <img src="assets/img/itmo_small_white_eng.jpg" alt="Аватар компании"/>
+  <img src="assets/img/itmo_small_white_eng.jpg" alt="Аватар компании" />
   <h3>Название компании</h3>
 </div>

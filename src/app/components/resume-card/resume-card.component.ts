@@ -1,20 +1,29 @@
-import { Component, OnInit } from '@angular/core';
-import {AuthService} from "../../auth.service";
+import { Overlay } from '@angular/cdk/overlay';
+import {
+  Component,
+  ComponentFactory,
+  OnInit,
+  ViewContainerRef,
+} from '@angular/core';
+import { Router } from '@angular/router';
+import { Dialog } from '@angular/cdk/dialog';
+import { AuthService } from '../../auth.service';
 
 @Component({
   selector: 'app-resume-card',
   templateUrl: './resume-card.component.html',
-  styleUrls: ['./resume-card.component.scss']
+  styleUrls: ['./resume-card.component.scss'],
 })
 export class ResumeCardComponent implements OnInit {
+  constructor(private auth: AuthService, private router: Router) {}
 
-  constructor(private auth: AuthService) { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   connect($event: Event) {
-
+    if (!this.auth.logged) this.router.navigate(['/register']);
+    let btn = ($event.target as HTMLElement).closest('app-button');
+    if (btn == null) return;
+    btn.classList.add('disabled');
+    setTimeout(() => btn?.classList.remove('disabled'), 5000);
   }
-
 }

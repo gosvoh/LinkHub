@@ -33,12 +33,10 @@ ul {
     &::before {
       content: "";
       position: absolute;
-      // TODO underline
     }
 
     &:hover {
       text-decoration: underline;
-      // TODO underline animation
     }
 
     &.active {

@@ -24,9 +24,9 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   submit() {
-    if (!this.auth.user.login) this.auth.user.login = 'undefined';
-    if (!this.auth.user.password) this.auth.user.password = 'undefined';
-    if (!this.auth.user.email) this.auth.user.email = 'undefined';
+    if (!this.auth.user.login) this.auth.user.login = 'default';
+    if (!this.auth.user.password) this.auth.user.password = 'default';
+    if (!this.auth.user.email) this.auth.user.email = 'default';
     this.auth.logged = true;
     localStorage.setItem('user', JSON.stringify(this.auth.user));
     this.router.navigate(['/']);
