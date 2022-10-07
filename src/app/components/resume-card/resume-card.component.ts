@@ -1,13 +1,9 @@
-import { Overlay } from '@angular/cdk/overlay';
 import {
   Component,
-  ComponentFactory,
   OnInit,
-  ViewContainerRef,
 } from '@angular/core';
-import { Router } from '@angular/router';
-import { Dialog } from '@angular/cdk/dialog';
-import { AuthService } from '../../auth.service';
+import {Router} from '@angular/router';
+import {AuthService} from '../../auth.service';
 
 @Component({
   selector: 'app-resume-card',
@@ -15,9 +11,11 @@ import { AuthService } from '../../auth.service';
   styleUrls: ['./resume-card.component.scss'],
 })
 export class ResumeCardComponent implements OnInit {
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(private auth: AuthService, private router: Router) {
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   connect($event: Event) {
     if (!this.auth.logged) this.router.navigate(['/register']);
